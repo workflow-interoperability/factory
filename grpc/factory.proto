@@ -1,0 +1,76 @@
+syntax = "proto3";
+package grpc;
+
+service Factory {
+    rpc GetProperties (FactoryGetPropertiesRq) returns (FactoryGetPropertiesRs);
+    rpc SetProperties (FactoryGetPropertiesRs) returns (FactoryGetPropertiesRq);
+    rpc CreateInstance (FactoryCreateInstanceRq) returns (FactoryCreateInstanceRs);
+    rpc ListInstances (FactoryListInstancesRq) returns (FactoryListInstancesRs);
+    rpc GetDefinition (FactoryGetDefinitionRq) returns (FactoryGetDefinitionRs);
+    rpc SetDefinition (FactorySetDefinitionRq) returns (FactorySetDefinitionRs);
+}
+
+message FactoryGetPropertiesRq {
+    string Key = 1;
+}
+
+message FactoryGetPropertiesRs {
+    string Key = 1;
+    string Name = 2;
+    string Subject = 3;
+    string Description = 4;
+    string ContextDataSchema = 5;
+    string ResultDataSchema = 6;
+    // use timestamp to represent
+    int64 Expiration = 7;
+}
+
+message FactoryCreateInstanceRq {
+    bool StartImmediately = 1;
+    string ObserverKey = 2;
+    string Name = 3;
+    string Subject = 4;
+    string Description = 5;
+    // encoded as json
+    string ContextData = 6;
+    string FactoryKey = 8;
+}
+
+message FactoryCreateInstanceRs {
+    string InstanceKey = 1;
+}
+
+message FactoryListInstancesRq {
+    string Filter = 1;
+    string FilterType = 2;
+}
+
+message FactoryListInstancesRs {
+    repeated Instance sequence = 1;
+}
+
+message Instance {
+    string InstanceKey = 1;
+    string Name = 2;
+    string Subject = 3;
+    int32 Priority = 4;
+}
+
+message FactoryGetDefinitionRq {
+    string Key = 1;
+    string ProcessLanguage = 2;
+}
+
+message FactoryGetDefinitionRs {
+    string Definition = 1;
+}
+
+message FactorySetDefinitionRq {
+    string Key = 3;
+    string ProcessLanguage = 1;
+    string Definition = 2;
+}
+
+message FactorySetDefinitionRs {
+    string Definition = 1;
+}

@@ -1,0 +1,45 @@
+syntax = "proto3";
+package grpc;
+
+service ServiceRegistry {
+    rpc ListDefinitions (ServiceRegistryListDefinitionsRq) returns (ServiceRegistryListDefinitionsRs);
+    rpc NewDefinition (ServiceRegistryNewDefinitionRq) returns (ServiceRegistryNewDefinitionRs);
+    rpc GetProperties (ServiceRegistryGetPropertiesRq) returns (ServiceRegistryGetPropertiesRs);
+    rpc SetProperties (ServiceRegistryGetPropertiesRs) returns (ServiceRegistryGetPropertiesRq);
+}
+
+message ServiceRegistryListDefinitionsRq {
+}
+
+message ServiceRegistryListDefinitionsRs {
+    repeated ServiceRegistryListDefinitionsRsSequence sequence = 1;
+}
+
+message ServiceRegistryListDefinitionsRsSequence {
+    string DefinitionKey = 1;
+    string Name = 2;
+    string Description = 3;
+    string Version = 4;
+    string Status = 5;
+}
+
+message ServiceRegistryNewDefinitionRq {
+    string ProcessLanguage = 1;
+    string Definition = 2;
+}
+
+message ServiceRegistryNewDefinitionRs {
+    string Definition = 1;
+}
+
+message ServiceRegistryGetPropertiesRq {
+    string Key = 1;
+}
+
+message ServiceRegistryGetPropertiesRs {
+    string Key = 1;
+    string Name = 2;
+    string Description = 3;
+    string Version = 4;
+    string Status = 5;
+}

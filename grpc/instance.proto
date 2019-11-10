@@ -1,0 +1,69 @@
+syntax = "proto3";
+package grpc;
+
+service Instance {
+    rpc GetProperties (InstanceGetPropertiesRq) returns (InstanceGetPropertiesRs);
+    rpc SetProperties (InstanceSetPropertiesRq) returns (InstanceGetPropertiesRs);
+    rpc Subscribe (InstanceSubscribeRq) returns (InstanceSubscribeRs);
+    rpc Unsubscribe (InstanceSubscribeRq) returns (InstanceSubscribeRs);
+    rpc ListActivities (InstanceListActivitiesRq) returns (InstanceListActivitiesRs);
+    rpc ChangeState (InstanceChangeStateRq) returns (InstanceChangeStateRq);
+}
+
+message InstanceGetPropertiesRq {
+    string InstanceKey = 1;
+}
+
+message InstanceGetPropertiesRs {
+    string InstanceKey = 1;
+    State State = 2;
+    string Name = 3;
+    string Subject = 4;
+    string Description = 5;
+    string FactoryKey = 6;
+    repeated string Observers = 7;
+    string ContextData = 8;
+    string ResultData = 9;
+}
+
+message InstanceSetPropertiesRq {
+    string InstanceKey = 1;
+    string Subject = 2;
+    string Description = 3;
+    string Priority = 4;
+    string ContextData = 5;
+}
+
+message InstanceSubscribeRq {
+    string InstanceKey = 1;
+    string ObserverKey = 2;
+}
+
+message InstanceSubscribeRs {
+}
+
+message InstanceListActivitiesRq {
+    string InstanceKey = 1;
+}
+
+message InstanceListActivitiesRs {
+    string ActivityKey = 1;
+    string Name = 2;
+    string Description = 3;
+    string Assignee = 4;
+}
+
+message InstanceChangeStateRq {
+    string InstanceKey = 1;
+    State state = 2;
+}
+
+enum State {
+    OPEN_NOTRUNNING = 0;
+    OPEN_NOTRUNNING_SUSPENDED = 1;
+    OPEN_RUNNING = 2;
+    CLOSED_COMPLETED = 3;
+    CLOSED_ABNORMALCOMPLETED = 4;
+    CLOSED_ABNORMALCOMPLETED_TERMINATED = 5;
+    CLOSED_ABNORMALCOMPLETED_ABORTED = 6;
+}
