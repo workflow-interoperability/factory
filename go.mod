@@ -13,10 +13,8 @@ require (
 	github.com/rs/xid v1.2.1
 	github.com/sirupsen/logrus v1.4.2
 	github.com/spf13/pflag v1.0.5
+	github.com/workflow-interoperability/observer v0.0.0-20191029083329-0eaec9b116a7
 	github.com/zeebe-io/zeebe v0.0.0-20191105161245-8a39f3a5cb99
 	gitlab.com/go-online/grpc-files v0.0.0-20191021164543-056ce12c3cdc
-	golang.org/x/lint v0.0.0-20190313153728-d0100b6bd8b3 // indirect
-	golang.org/x/tools v0.0.0-20190524140312-2c0ae7006135 // indirect
 	google.golang.org/grpc v1.25.0
-	honnef.co/go/tools v0.0.0-20190523083050-ea95bdfd59fc // indirect
 )

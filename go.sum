@@ -102,6 +102,8 @@ github.com/stretchr/testify v1.2.2 h1:bSDNvY7ZPG5RlJ8otE/7V6gMiyenm9RtJ7IUVIAoJ1
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
 github.com/stretchr/testify v1.4.0 h1:2E4SXV/wtOkTonXsotYi4li6zVWxYlZuYNCXe9XRJyk=
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
+github.com/workflow-interoperability/observer v0.0.0-20191029083329-0eaec9b116a7 h1:td3WonKXZ502wUINq5jMEyD8RTQc1IMC2XLd95DF8C8=
+github.com/workflow-interoperability/observer v0.0.0-20191029083329-0eaec9b116a7/go.mod h1:Qt75EfjksSOPEeGe5sqGvNUvvSPikPN8Pq5Xe6OJleY=
 github.com/zeebe-io/zeebe v0.0.0-20191105161245-8a39f3a5cb99 h1:lDP1syPxUmDCr4gE0HehyMkhJ7PAjbOLcjbBUYAaTuk=
 github.com/zeebe-io/zeebe v0.0.0-20191105161245-8a39f3a5cb99/go.mod h1:vr0zDEpttuCQReEhZLf8e6HCRtFneZtAjN3d3KP1T6U=
 gitlab.com/go-online/grpc-files v0.0.0-20191021164543-056ce12c3cdc h1:e9vOVDqmiu5grlWnf0LSkFSOKHmszDJvsAwhlKQThGM=
@@ -165,6 +167,7 @@ google.golang.org/genproto v0.0.0-20190819201941-24fa4b261c55/go.mod h1:DMBHOl98
 google.golang.org/grpc v1.17.0/go.mod h1:6QZJwpn2B+Zp71q/5VxRsJ6NXXVCE5NRUHRo+f3cWCs=
 google.golang.org/grpc v1.19.0/go.mod h1:mqu4LbDTu4XGKhr4mRzUsmM4RtVoemTSY81AxZiDr8c=
 google.golang.org/grpc v1.23.0/go.mod h1:Y5yQAOtifL1yxbo5wqy6BxZv8vAUGQwXBOALyacEbxg=
+google.golang.org/grpc v1.24.0/go.mod h1:XDChyiUovWa60DnaeDeZmSW86xtLtjtZbwvSiRnRtcA=
 google.golang.org/grpc v1.25.0 h1:ItERT+UbGdX+s4u+nQNlVM/Q7cbmf7icKfvzbWqVtq0=
 google.golang.org/grpc v1.25.0/go.mod h1:c3i+UQWmh7LiEpx4sFZnkU36qjEYZ0imhYfXVyQciAY=
 gopkg.in/alecthomas/kingpin.v2 v2.2.6/go.mod h1:FMv+mEhP44yOT+4EoQTLFTRgOQ1FBLkstjWtayDeSgw=

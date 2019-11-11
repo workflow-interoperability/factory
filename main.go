@@ -26,7 +26,6 @@ func main() {
 	}
 	log.Printf("Listening on: %s", *grpcPort)
 	gs := grpc.NewServer()
-	mygrpc.RegisterActivityServer(gs, &controller.Activity{})
 	mygrpc.RegisterInstanceServer(gs, &controller.Instance{})
 	mygrpc.RegisterFactoryServer(gs, &controller.Factory{})
 	mygrpc.RegisterServiceRegistryServer(gs, &controller.ServiceRegistry{})

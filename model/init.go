@@ -18,7 +18,6 @@ func init() {
 	}
 	db.AutoMigrate(&Factory{})
 	db.AutoMigrate(&Instance{})
-	db.AutoMigrate(&Activity{})
 	db.AutoMigrate(&ServiceRegistry{})
 	SqliteConn = db
 }
